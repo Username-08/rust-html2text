@@ -963,12 +963,12 @@ fn process_dom_node<'a, 'b, T: Write>(
                     let mut src = None;
                     for attr in borrowed.iter() {
                         if &attr.name.local == "src" && !attr.value.is_empty() {
-                            title = Some(&*attr.value);
+                            src = Some(&*attr.value);
                             break;
                         }
                     }
-                    if let Some(title) = title {
-                        Finished(RenderNode::new(Img(title.into())))
+                    if let Some(src) = src {
+                        Finished(RenderNode::new(Img(src.into())))
                     } else {
                         Nothing
                     }
