@@ -945,9 +945,13 @@ fn process_dom_node<'a, 'b, T: Write>(
                     }
                 }
                 expanded_name!(html "em") => pending(handle, |_, cs| Some(RenderNode::new(Em(cs)))),
+                expanded_name!(html "i") => pending(handle, |_, cs| Some(RenderNode::new(Em(cs)))),
                 expanded_name!(html "strong") => {
                     pending(handle, |_, cs| Some(RenderNode::new(Strong(cs))))
                 }
+                expanded_name!(html "b") => {
++                    pending(handle, |_, cs| Some(RenderNode::new(Strong(cs))))
++                }
                 expanded_name!(html "s") => {
                     pending(handle, |_, cs| Some(RenderNode::new(Strikeout(cs))))
                 }
