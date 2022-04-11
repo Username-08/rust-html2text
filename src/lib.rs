@@ -960,9 +960,9 @@ fn process_dom_node<'a, 'b, T: Write>(
                 }
                 expanded_name!(html "img") => {
                     let borrowed = attrs.borrow();
-                    let mut title = None;
+                    let mut src = None;
                     for attr in borrowed.iter() {
-                        if &attr.name.local == "alt" && !attr.value.is_empty() {
+                        if &attr.name.local == "src" && !attr.value.is_empty() {
                             title = Some(&*attr.value);
                             break;
                         }
