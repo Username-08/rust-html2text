@@ -950,8 +950,8 @@ fn process_dom_node<'a, 'b, T: Write>(
                     pending(handle, |_, cs| Some(RenderNode::new(Strong(cs))))
                 }
                 expanded_name!(html "b") => {
-+                    pending(handle, |_, cs| Some(RenderNode::new(Strong(cs))))
-+                }
+                    pending(handle, |_, cs| Some(RenderNode::new(Strong(cs))))
+                }
                 expanded_name!(html "s") => {
                     pending(handle, |_, cs| Some(RenderNode::new(Strikeout(cs))))
                 }
